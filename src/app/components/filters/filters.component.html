@@ -1,0 +1,6 @@
+<div class="sortBy">
+    <span>Sort by </span>
+    <app-select (input)="handleInput($event)"  [options]="options"></app-select>
+    <span>Items per page </span>
+    <app-select (input)="handlePerPage($event)"  [options]="itemsPerPage"></app-select>
+  </div>

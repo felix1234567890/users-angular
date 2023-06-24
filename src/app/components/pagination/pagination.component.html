@@ -1,0 +1,8 @@
+<div class="buttons">
+    <div  *ngIf="pageNumber > 1">
+      <button (click)="decreaseNumber.emit()">Previous</button>
+    </div>
+    <div *ngIf="pageNumber < pageCount">
+      <button (click)="increaseNumber.emit()">Next</button>
+    </div>
+  </div>

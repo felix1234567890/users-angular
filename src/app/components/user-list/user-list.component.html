@@ -1,0 +1,15 @@
+<div class="container">
+  <section *ngIf="users.length; else noUsers" class="card-row">
+    <div *ngFor="let user of users; index as i">
+      <app-user-item [user]="user"></app-user-item>
+    </div>
+  </section>
+  <ng-template #noUsers>
+    <div>
+      <h1 *ngIf="loading; else noUsersMessage">Loading...</h1>
+    </div>
+    <ng-template #noUsersMessage>
+      <h1>No users from the country you entered 😮</h1>
+    </ng-template>
+  </ng-template>
+</div>
