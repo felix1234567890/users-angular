@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserItemComponent } from './user-item.component';
+import { User } from '../../services/user.service';
 
 describe('UserItemComponent', () => {
   let component: UserItemComponent;
@@ -14,10 +15,29 @@ describe('UserItemComponent', () => {
 
     fixture = TestBed.createComponent(UserItemComponent);
     component = fixture.componentInstance;
+    // Set the user input
+    component.user = {
+      photo: 'path/to/photo.jpg',
+      name: 'John Doe',
+      email: 'johndoe@example.com',
+      country: 'USA',
+      gender: 'Male',
+      age: 30
+    };
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display user details', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('img').src).toContain(component.user.photo);
+    expect(compiled.querySelector('.user__name').textContent).toContain(component.user.name);
+    expect(compiled.querySelector('.user__details').textContent).toContain(component.user.email);
+    expect(compiled.querySelector('.user__details').textContent).toContain(component.user.country);
+    expect(compiled.querySelector('.user__details').textContent).toContain(component.user.gender);
+    expect(compiled.querySelector('.user__details').textContent).toContain(component.user.age);
   });
 });

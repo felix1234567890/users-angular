@@ -27,7 +27,6 @@ describe('UserService', () => {
     it('should load users and set the subjects', () => {
       const mockUsers: User[] = [
         { age: 25, gender: 'male', country: 'USA', email: 'john@example.com', name: 'John', photo: 'john.jpg' },
-        // Add more mock users as needed
       ];
 
       userService.loadUsers().subscribe(() => {
@@ -42,10 +41,6 @@ describe('UserService', () => {
 
         userService.sortedUsers$.subscribe((sortedUsers) => {
           expect(sortedUsers).toEqual(mockUsers);
-        });
-
-        userService.shownUsers$.subscribe((shownUsers) => {
-          // Assert the correct pagination logic here
         });
 
         userService.loading$.subscribe((loading) => {
