@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { CommonService } from './services/common.service';
 import { AddFlagDirective } from './add-flag.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AddFlagDirective } from './add-flag.directive';
     HeaderComponent,
     StoreModule.forRoot(userReducer),
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]
