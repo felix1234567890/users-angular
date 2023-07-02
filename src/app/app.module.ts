@@ -11,6 +11,9 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from './state/user.reducer';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './pages/home/home.component';
+import { CommonService } from './services/common.service';
 
 @NgModule({
   declarations: [
@@ -19,15 +22,17 @@ import { HttpClientModule } from '@angular/common/http';
     UserItemComponent,
     UserListComponent,
     SelectComponent,
-    FiltersComponent
+    FiltersComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HeaderComponent,
     StoreModule.forRoot(userReducer),
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,2 @@
 <app-header [title]="'User Search App'" (searchTerm)="handleSearch($event)"></app-header>
-<app-filters (sort)="handleSortByAge($event)" (perPage)="handlePerPage($event)"></app-filters>
-<app-user-list [users]="shownUsers()"></app-user-list>
-<app-pagination [pageCount]="pageCount()" [pageNumber]="pageNumber()" (increaseNumber)="increaseNumber()"
-  (decreaseNumber)="decreaseNumber()"></app-pagination>
+<router-outlet></router-outlet>

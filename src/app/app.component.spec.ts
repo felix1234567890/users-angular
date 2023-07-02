@@ -1,25 +1,18 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { FiltersComponent } from './components/filters/filters.component';
 import { HeaderComponent } from './components/header/header.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
-import { SelectComponent } from './components/select/select.component';
-import { UserItemComponent } from './components/user-item/user-item.component';
-import { UserListComponent } from './components/user-list/user-list.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { CommonService } from './services/common.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, HeaderComponent],
+      imports: [HttpClientTestingModule, HeaderComponent, RouterTestingModule],
       declarations: [
         AppComponent,
-        FiltersComponent,
-        UserListComponent,
-        UserItemComponent,
-        PaginationComponent,
-        SelectComponent
       ],
+      providers:[CommonService]
     }).compileComponents();
   });
 
