@@ -6,7 +6,7 @@
     <h3 class="user__name">{{ user.name }}</h3>
     <div class="user__details">
       <p><strong>Email:</strong> {{ user.email }}</p>
-      <p><strong>Country:</strong> {{ user.country }}</p>
+      <p appAddFlag [country]="user.country"><strong>Country:</strong> {{ user.country }}</p>
       <p><strong>Gender:</strong> {{ user.gender }}</p>
       <p><strong>Age:</strong> {{ user.age }}</p>
     </div>

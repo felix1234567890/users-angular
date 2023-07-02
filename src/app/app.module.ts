@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { CommonService } from './services/common.service';
+import { AddFlagDirective } from './add-flag.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CommonService } from './services/common.service';
     HomeComponent
   ],
   imports: [
+    AddFlagDirective,
     BrowserModule,
     HeaderComponent,
     StoreModule.forRoot(userReducer),
