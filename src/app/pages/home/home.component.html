@@ -1,4 +1,7 @@
-<app-filters (sort)="commonService.handleSortByAge($event)" (perPage)="commonService.handlePerPage($event)"></app-filters>
+<app-filters (sort)="commonService.handleSortByAge($event)" (perPage)="commonService.handlePerPage($event)">
+  <span>Sort by </span>
+  <span perPage>Items per page </span>
+</app-filters>
 <app-user-list [users]="commonService.shownUsers()"></app-user-list>
 <app-pagination [pageCount]="commonService.pageCount()" [pageNumber]="commonService.pageNumber()" (increaseNumber)="commonService.increaseNumber()"
   (decreaseNumber)="commonService.decreaseNumber()"></app-pagination>

@@ -4,16 +4,15 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports:[FormsModule],
+  imports: [FormsModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  @Input({required:true}) title!:string
+  @Input({ required: false }) title!: string
   @Output() searchTerm = new EventEmitter<string>();
-  search!:string
+  search!: string
   searchCountry() {
-    console.log(this.search)
-    // this.searchTerm.emit(this.search);
+    this.searchTerm.emit(this.search);
   }
 }

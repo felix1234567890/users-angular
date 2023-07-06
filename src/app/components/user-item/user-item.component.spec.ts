@@ -1,7 +1,7 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserItemComponent } from './user-item.component';
-import { User } from '../../services/user.service';
 
 describe('UserItemComponent', () => {
   let component: UserItemComponent;
@@ -9,7 +9,8 @@ describe('UserItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserItemComponent ]
+      declarations: [ UserItemComponent ],
+      schemas:[NO_ERRORS_SCHEMA]
     })
     .compileComponents();
 

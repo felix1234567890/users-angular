@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="header__title">{{title}}</div>
+  <ng-content></ng-content>
   <div class="header__search">
     <form #searchForm="ngForm">
     <input name="search" [(ngModel)]="search" type="search" placeholder="Search users by country" (ngModelChange)="searchTerm = $event" (ngModelChange)="searchCountry()" />

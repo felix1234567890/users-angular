@@ -1,11 +1,13 @@
+import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
-
+  let inputElement: DebugElement;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ],
@@ -15,6 +17,7 @@ describe('HeaderComponent', () => {
 
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
+    inputElement = fixture.debugElement.query(By.css('input'));
     fixture.detectChanges();
   });
 
@@ -22,11 +25,11 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should emit search term', () => {
-    spyOn(component.searchTerm, 'emit');
-    const inputElement = fixture.debugElement.nativeElement.querySelector('input');
-    inputElement.value = 'test';
-    inputElement.dispatchEvent(new Event('input'));
+    spyOn(component, 'searchCountry');
     fixture.detectChanges();
-    expect(component.searchTerm.emit).toHaveBeenCalledWith('test');
+    inputElement.nativeElement.value = 'Netherlands';
+    inputElement.triggerEventHandler('input', { target: inputElement.nativeElement });
+    fixture.detectChanges();
+    expect(component.searchCountry).toHaveBeenCalled()
   });
 });
