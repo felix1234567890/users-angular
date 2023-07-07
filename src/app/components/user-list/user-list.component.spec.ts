@@ -19,6 +19,7 @@ describe('UserListComponent', () => {
     fixture = TestBed.createComponent(UserListComponent);
     component = fixture.componentInstance;
     component.users = [{
+      id: 1,
       photo: 'path/to/photo.jpg',
       name: 'John Doe',
       email: 'johndoe@example.com',

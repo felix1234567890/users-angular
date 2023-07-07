@@ -17,12 +17,13 @@ import { CommonService } from './services/common.service';
 import { FormsModule } from '@angular/forms';
 import { AddFlagDirective } from './directives/add-flag.directive';
 import { AppInitService } from './services/entry.service';
-
+import { UserService } from './services/user.service';
+import { CountryCodePipe } from './country-code.pipe';
 
 function initializeApp1(appInitService: AppInitService) {
-  return () => { 
+  return () => {
     return appInitService.init();
-  }
+  };
 }
 
 @NgModule({
@@ -33,7 +34,7 @@ function initializeApp1(appInitService: AppInitService) {
     UserListComponent,
     SelectComponent,
     FiltersComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,10 +43,20 @@ function initializeApp1(appInitService: AppInitService) {
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    AddFlagDirective
+    AddFlagDirective,
+    CountryCodePipe
   ],
-  providers: [AppInitService,
-    { provide: APP_INITIALIZER,useFactory: initializeApp1, deps: [AppInitService], multi: true},CommonService],
-  bootstrap: [AppComponent]
+  providers: [
+    AppInitService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeApp1,
+      deps: [AppInitService],
+      multi: true,
+    },
+    CommonService,
+    UserService
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

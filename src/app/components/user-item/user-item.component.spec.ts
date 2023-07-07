@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -10,7 +11,8 @@ describe('UserItemComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ UserItemComponent ],
-      schemas:[NO_ERRORS_SCHEMA]
+      schemas:[NO_ERRORS_SCHEMA],
+      imports:[HttpClientModule]
     })
     .compileComponents();
 

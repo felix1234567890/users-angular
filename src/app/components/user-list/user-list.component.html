@@ -2,14 +2,17 @@
   <section *ngIf="users.length; else noUsers" class="card-row">
     <div *ngFor="let user of users; index as i">
       <ng-template #userItem let-user>
-        <a [routerLink]="['user',user.id]">
+        <a [routerLink]="['user', user.id]">
           <article class="card">
             <img [src]="user.photo" alt="Preview of Whizzbang Widget" />
             <h3 class="user__name">{{ user.name }}</h3>
+            <p>{{user.country | countryCode:"N/A"}}</p>
           </article>
         </a>
       </ng-template>
-      <ng-container *ngTemplateOutlet="userItem; context:{$implicit:user}"></ng-container>
+      <ng-container
+        *ngTemplateOutlet="userItem; context: { $implicit: user }"
+      ></ng-container>
     </div>
   </section>
   <ng-template #noUsers>

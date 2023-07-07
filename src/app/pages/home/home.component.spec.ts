@@ -15,9 +15,16 @@ describe('HomeComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule],
-      declarations: [HomeComponent, FiltersComponent, UserListComponent,UserItemComponent, SelectComponent, PaginationComponent],
-      providers:[CommonService]
+      imports: [HttpClientTestingModule],
+      declarations: [
+        HomeComponent,
+        FiltersComponent,
+        UserListComponent,
+        UserItemComponent,
+        SelectComponent,
+        PaginationComponent,
+      ],
+      providers: [CommonService],
     });
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;

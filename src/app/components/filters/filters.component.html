@@ -1,6 +1,9 @@
 <div class="sortBy">
-    <ng-content></ng-content>
-    <app-select (input)="handleInput($event)"  [options]="options"></app-select>
-    <ng-content select="[perPage]"></ng-content>
-    <app-select (input)="handlePerPage($event)"  [options]="itemsPerPage"></app-select>
-  </div>
+  <ng-content></ng-content>
+  <app-select (input)="handleInput($event)" [options]="options"></app-select>
+  <ng-content select="[perPage]"></ng-content>
+  <app-select
+    (input)="handlePerPage($event)"
+    [options]="itemsPerPage"
+  ></app-select>
+</div>

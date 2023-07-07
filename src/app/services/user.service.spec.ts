@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { UserService, User } from './user.service';
 
 describe('UserService', () => {
@@ -26,7 +29,15 @@ describe('UserService', () => {
   describe('loadUsers', () => {
     it('should load users and set the subjects', () => {
       const mockUsers: User[] = [
-        { age: 25, gender: 'male', country: 'USA', email: 'john@example.com', name: 'John', photo: 'john.jpg' },
+        {
+          id: 1,
+          age: 25,
+          gender: 'male',
+          country: 'USA',
+          email: 'john@example.com',
+          name: 'John',
+          photo: 'john.jpg',
+        },
       ];
 
       userService.loadUsers().subscribe(() => {
@@ -73,7 +84,15 @@ describe('UserService', () => {
   describe('filterUsers', () => {
     it('should filter users and set the sortedUsers and shownUsers subjects', () => {
       const mockUsers: User[] = [
-        { age: 25, gender: 'male', country: 'USA', email: 'john@example.com', name: 'John', photo: 'john.jpg' },
+        {
+          id:1,
+          age: 25,
+          gender: 'male',
+          country: 'USA',
+          email: 'john@example.com',
+          name: 'John',
+          photo: 'john.jpg',
+        },
         // Add more mock users as needed
       ];
       const country = 'USA';
@@ -102,7 +121,15 @@ describe('UserService', () => {
   describe('sortUsers', () => {
     it('should sort users and set the sortedUsers and shownUsers subjects', () => {
       const mockUsers: User[] = [
-        { age: 25, gender: 'male', country: 'USA', email: 'john@example.com', name: 'John', photo: 'john.jpg' },
+        {
+          id:1,
+          age: 25,
+          gender: 'male',
+          country: 'USA',
+          email: 'john@example.com',
+          name: 'John',
+          photo: 'john.jpg',
+        },
         // Add more mock users as needed
       ];
       const option = 'desc';
@@ -129,7 +156,15 @@ describe('UserService', () => {
   describe('paginateData', () => {
     it('should set the shownUsers subject with the correct pagination logic', () => {
       const mockUsers: User[] = [
-        { age: 25, gender: 'male', country: 'USA', email: 'john@example.com', name: 'John', photo: 'john.jpg' },
+        {
+          id:1,
+          age: 25,
+          gender: 'male',
+          country: 'USA',
+          email: 'john@example.com',
+          name: 'John',
+          photo: 'john.jpg',
+        },
         // Add more mock users as needed
       ];
       const itemsPerPage = 6;
