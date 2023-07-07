@@ -4,6 +4,7 @@ import { BehaviorSubject, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 
 export interface User {
+  id:number
   age: number
   gender: string
   country: string

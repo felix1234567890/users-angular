@@ -24,11 +24,12 @@ const countryCodes = {
   standalone: true
 })
 export class AddFlagDirective implements OnInit {
-  @Input() country!: string
+  @Input() country!: string | undefined
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit() {
+    if(!this.country) return
     const imageUrl = `https://flagsapi.com/${countryCodes[this.country as keyof typeof countryCodes]}/flat/24.png`;
     const imgElement = this.renderer.createElement('img');
     this.renderer.setAttribute(imgElement, 'src', imageUrl);

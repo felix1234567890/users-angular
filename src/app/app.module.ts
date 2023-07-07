@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -14,8 +14,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { CommonService } from './services/common.service';
-import { AddFlagDirective } from './add-flag.directive';
 import { FormsModule } from '@angular/forms';
+import { AddFlagDirective } from './directives/add-flag.directive';
+import { AppInitService } from './services/entry.service';
+
+
+function initializeApp1(appInitService: AppInitService) {
+  return () => { 
+    return appInitService.init();
+  }
+}
 
 @NgModule({
   declarations: [
@@ -28,14 +36,16 @@ import { FormsModule } from '@angular/forms';
     HomeComponent
   ],
   imports: [
-    AddFlagDirective,
     BrowserModule,
     HeaderComponent,
     StoreModule.forRoot(userReducer),
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
+    AddFlagDirective
   ],
-  providers: [CommonService],
+  providers: [AppInitService,
+    { provide: APP_INITIALIZER,useFactory: initializeApp1, deps: [AppInitService], multi: true},CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
