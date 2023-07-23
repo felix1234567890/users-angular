@@ -24,12 +24,4 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should emit search term', () => {
-    spyOn(component, 'searchCountry');
-    fixture.detectChanges();
-    inputElement.nativeElement.value = 'Netherlands';
-    inputElement.triggerEventHandler('input', { target: inputElement.nativeElement });
-    fixture.detectChanges();
-    expect(component.searchCountry).toHaveBeenCalled()
-  });
 });

@@ -3,12 +3,11 @@ import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import {
   FormControl,
   FormGroup,
-  FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { debounceTime, filter, Subject, takeUntil, tap } from 'rxjs';
+import { debounceTime, filter, Subject, takeUntil, } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
-import { OutsideClickDirective } from '../../outside-click.directive';
+import { OutsideClickDirective } from '../../directives/outside-click.directive';
 import { CommonService } from '../../services/common.service';
 
 @Component({

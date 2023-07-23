@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
-import { UserItemComponent } from './components/user-item/user-item.component';
+import { UserItemComponent } from './pages/user-item/user-item.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { SelectComponent } from './components/select/select.component';
 import { FiltersComponent } from './components/filters/filters.component';
@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { AddFlagDirective } from './directives/add-flag.directive';
 import { AppInitService } from './services/entry.service';
 import { UserService } from './services/user.service';
-import { CountryCodePipe } from './country-code.pipe';
+import { CountryCodePipe } from './pipes/country-code.pipe';
 
 function initializeApp1(appInitService: AppInitService) {
   return () => {

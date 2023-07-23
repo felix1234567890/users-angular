@@ -1,8 +1,8 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CountryCodePipe } from 'src/app/country-code.pipe';
-import { UserItemComponent } from '../user-item/user-item.component';
+import { CountryCodePipe } from '../../pipes/country-code.pipe';
+import { UserItemComponent } from '../../pages/user-item/user-item.component';
 import { UserListComponent } from './user-list.component';
 
 describe('UserListComponent', () => {
