@@ -55,7 +55,7 @@ function initializeApp1(appInitService: AppInitService) {
       multi: true,
     },
     CommonService,
-    UserService
+    UserService,
   ],
   bootstrap: [AppComponent],
 })

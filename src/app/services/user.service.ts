@@ -8,8 +8,8 @@ export interface User {
   age: number
   gender: string
   country: string
-  email:string
-  name:string
+  email?:string
+  name?:string
   photo:string
 }
 @Injectable({
@@ -26,9 +26,10 @@ export class UserService {
   shownUsers$ = this.shownUsersSubject.asObservable();
   loading$ = this.loadingSubject.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+  }
 
-  loadUsers(itemsPerPage?:number,value?:number) {
+  loadUsers(itemsPerPage?:number) {
     this.loadingSubject.next(true);
     return this.http
       .get<User[]>('assets/users.json')

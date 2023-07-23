@@ -1,6 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CountryCodePipe } from 'src/app/country-code.pipe';
 import { UserItemComponent } from '../user-item/user-item.component';
 import { UserListComponent } from './user-list.component';
 
@@ -10,7 +11,7 @@ describe('UserListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, CountryCodePipe],
       declarations: [ UserListComponent, UserItemComponent ],
       schemas:[NO_ERRORS_SCHEMA]
     })

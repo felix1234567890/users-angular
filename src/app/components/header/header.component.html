@@ -1,14 +1,15 @@
-<header class="header">
+<header class="header" >
   <ng-content></ng-content>
+  <h1>{{ title }}</h1>
   <div class="header__search">
-    <form #searchForm="ngForm">
+    <form [formGroup]="searchForm">
       <input
+        (click)="clicked = true"
+        formControlName="search"
         name="search"
-        [(ngModel)]="search"
-        type="search"
         placeholder="Search users by country"
-        (ngModelChange)="searchTerm = $event"
-        (ngModelChange)="searchCountry()"
+        [ngClass]="{focused:clicked}"
+        (clickOutside)="clicked = false"
       />
     </form>
   </div>

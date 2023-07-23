@@ -1,4 +1,4 @@
-<app-header (searchTerm)="handleSearch($event)">
-    <div class="header__title">Users Search App</div>
+<app-header (searchTerm)="handleSearch($event)" [headerTitle]="'Users Search App'">
+    <!-- <div class="header__title">Users Search App</div> -->
 </app-header>
 <router-outlet/>
